@@ -78,9 +78,9 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     const SizedBox(height: 10),
                     Row(
-                      children: [
+                      children: const [
                         Icon(Icons.location_on, color: AppColors.mainColor),
-                        const SizedBox(width: 5),
+                        SizedBox(width: 5),
                         Text(
                           "USA, California",
                           style: TextStyle(color: AppColors.mainColor),

@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:mountain_project/details_page.dart';
 import 'package:mountain_project/texts_colors.dart';
@@ -18,7 +20,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   };
   @override
   Widget build(BuildContext context) {
-    // ignore: no_leading_underscores_for_local_identifiers
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       body: Column(
@@ -164,7 +165,7 @@ class CircleTabIndicator extends Decoration {
 
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    // TODO: implement createBoxPainter
+    //
     return _CirclePainter(color: color, radius: radius);
   }
 }
