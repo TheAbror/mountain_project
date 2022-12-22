@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountain_project/details_page.dart';
 import 'package:mountain_project/texts_colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   };
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       body: Column(
@@ -72,16 +74,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     scrollDirection: Axis.horizontal,
                     itemCount: 3,
                     itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 15, top: 20),
-                        width: 200,
-                        height: 300,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(image: AssetImage(
-                              // 'img/${images.keys.elementAt(index)}',
-                              'img/mountain.jpeg'), fit: BoxFit.cover),
+                      return GestureDetector(
+                        onTap: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DetailsPage(),
+                              ));
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 15, top: 20),
+                          width: 200,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(image: AssetImage(
+                                // 'img/${images.keys.elementAt(index)}',
+                                'img/mountain.jpeg'), fit: BoxFit.cover),
+                          ),
                         ),
                       );
                     }),
@@ -130,11 +141,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                         const SizedBox(height: 15),
-                        Container(
-                          child: AppText(
-                            text: images.values.elementAt(index),
-                            color: AppColors.textColor2,
-                          ),
+                        AppText(
+                          text: images.values.elementAt(index),
+                          color: AppColors.textColor2,
                         ),
                       ],
                     ),

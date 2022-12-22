@@ -74,21 +74,13 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                         ),
                         const SizedBox(height: 40),
-                        SizedBox(
-                          width: 200,
-                          child: Row(
-                            children: [
-                              GestureDetector(
-                                  onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MainScreen(),
-                                      )),
-                                  child: ResponsiveButton(width: 100)),
-                            ],
-                          ),
-                        ),
+                        GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MainScreen(),
+                                )),
+                            child: ResponsiveButton(width: 100)),
                       ],
                     ),
                     Column(

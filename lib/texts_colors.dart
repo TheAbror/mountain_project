@@ -46,13 +46,13 @@ class AppText extends StatelessWidget {
 }
 
 class AppColors {
-  static final Color textColor1 = const Color(0xFF989acd);
-  static final Color textColor2 = const Color(0xFF878593);
-  static final Color bigTextColor = const Color(0xFF2e2e31);
-  static final Color mainColor = const Color(0xFF5d69b3);
-  static final Color starColor = const Color(0xFFe7bb4e);
-  static final Color mainTextColor = const Color(0xFFababad);
-  static final Color buttonBackground = const Color(0xFFf1f1f9);
+  static const Color textColor1 = Color(0xFF989acd);
+  static const Color textColor2 = Color(0xFF878593);
+  static const Color bigTextColor = Color(0xFF2e2e31);
+  static const Color mainColor = Color(0xFF5d69b3);
+  static const Color starColor = Color(0xFFe7bb4e);
+  static const Color mainTextColor = Color(0xFFababad);
+  static const Color buttonBackground = Color(0xFFf1f1f9);
 }
 
 class ResponsiveButton extends StatelessWidget {
@@ -63,26 +63,23 @@ class ResponsiveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        width: isResponsive == true ? double.maxFinite : width,
-        height: 50,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.mainColor),
-        child: Row(
-          mainAxisAlignment: isResponsive == true
-              ? MainAxisAlignment.spaceBetween
-              : MainAxisAlignment.center,
-          children: [
-            isResponsive == true
-                ? Container(
-                    margin: const EdgeInsets.only(left: 20),
-                    child: AppText(text: "Book Trip Now", color: Colors.white))
-                : Container(),
-            Image.asset("img/button-one.png"),
-          ],
-        ),
+    return Container(
+      width: isResponsive == true ? double.maxFinite : width,
+      height: 50,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: AppColors.mainColor),
+      child: Row(
+        mainAxisAlignment: isResponsive == true
+            ? MainAxisAlignment.spaceBetween
+            : MainAxisAlignment.center,
+        children: [
+          isResponsive == true
+              ? Container(
+                  margin: const EdgeInsets.only(left: 20),
+                  child: AppText(text: "Book Trip Now", color: Colors.white))
+              : Container(),
+          Image.asset("img/button-one.png"),
+        ],
       ),
     );
   }

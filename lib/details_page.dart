@@ -167,7 +167,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       borderColor: AppColors.textColor1,
                       isIcon: true,
                       icon: Icons.favorite_border),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
@@ -197,6 +197,7 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 }
 
+// ignore: must_be_immutable
 class AppButtons extends StatelessWidget {
   final Color color;
   String? text;
